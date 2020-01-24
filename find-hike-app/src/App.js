@@ -1,10 +1,15 @@
 import React from 'react';
 import './App.css';
+import SearchBar from './SearchBar';
+import Header from './Header';
+import SearchResults from './SearchResults';
 
 function App() {
   return (
     <div>
-      hello
+      <Header />
+      <SearchBar />
+      <SearchResults />
     </div>
   );
 }
