@@ -9,7 +9,13 @@ constructor(){
   super();
   this.state ={
     hikeLocation: '',
-    setSearchLocation: ''
+    setSearchLocation: '',
+    mapQuestKey: process.env.REACT_APP_MAPQUEST_KEY,
+    mapQuestAPI: 'https://www.mapquestapi.com/geocoding/v1/address?key=',
+    lat:'',
+    long: '',
+    hikerProjectKey: process.env.REACT_APP_HIKER_PROJECT_KEY,
+    hikerProjectAPI:
   }
 }
 
@@ -20,7 +26,27 @@ handleChange = event => {
 handleSubmit = event => {
     event.preventDefault();
     console.log(this.state.hikeLocation);
+    this.getCoordinates();
   }
+
+getCoordinates = () => {
+  const mapQuestUrl = `${this.state.mapQuestAPI}${this.state.mapQuestKey}&inFormat=kvp&outFormat=json&location=${this.state.hikeLocation}&thumbMaps=false`;
+
+  fetch(mapQuestUrl)
+  .then(response => response.json())
+  .then(response => {
+    let lat = (response.results[0].locations[0].latLng.lat);
+    let long = (response.results[0].locations[0].latLng.lng);
+    this.setState({ lat: lat});
+    this.setState({ long: long });
+    console.log(this.state.lat);
+    console.log(this.state.long);
+  })
+}
+
+getHikeResults = () => {
+
+}
 
 render (){
   return (
