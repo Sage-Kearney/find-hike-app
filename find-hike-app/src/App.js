@@ -59,3 +59,8 @@ User browses through images & click which hike they want to explore more
 User is lead to url attached to that specific hike's data in the api
 
 */ 
+
+
+
+
+// https://www.mapquestapi.com/geocoding/v1/address?key=KEY&inFormat=kvp&outFormat=json&location=Marietta%2C+TN&thumbMaps=false
