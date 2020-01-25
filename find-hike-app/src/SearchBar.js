@@ -1,19 +1,22 @@
 import React from 'react'
 
-export default function SearchBar() {
+function SearchBar(props) {
     return (
         <div>
-            <form>
+            <form
+            onSubmit={props.handleSubmit}>
                 <input
-                placeholder="this in input"
                 type="text"
-                required
+                id="hikeLocation"
+                placeholder="enter city here"
+                value={props.hikeLocation}
+                onChange={props.handleChange}
                 >   
                 </input>
-                <button>
-                    this is button
-                </button>
+                <button type="submit">search</button>
             </form>
         </div>
     )
 }
+
+export default SearchBar;
