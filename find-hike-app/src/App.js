@@ -15,7 +15,8 @@ constructor(){
     lat:'',
     long: '',
     hikerProjectKey: process.env.REACT_APP_HIKER_PROJECT_KEY,
-    hikerProjectAPI:
+    hikerProjectAPI: 'https://www.hikingproject.com/data/get-trails?lat=',
+    hikeResults: ''
   }
 }
 
@@ -41,11 +42,19 @@ getCoordinates = () => {
     this.setState({ long: long });
     console.log(this.state.lat);
     console.log(this.state.long);
+    this.getHikeResults();
   })
 }
 
 getHikeResults = () => {
+  const hikerProjectUrl = `${this.state.hikerProjectAPI}${this.state.lat}&lon=${this.state.long}&key=${this.state.hikerProjectKey}`
 
+  fetch(hikerProjectUrl)
+  .then(response => response.json())
+  .then(response => {
+    this.setState({ hikeResults: response.trails});
+    console.log(this.state.hikeResults);
+  })
 }
 
 render (){
@@ -57,7 +66,9 @@ render (){
         handleSubmit={this.handleSubmit}
         hikeLocation={this.state.hikeLocation}
       />
-      <SearchResults />
+      <SearchResults
+      results={this.state.hikeResults} 
+      />
     </div>
   )
 }
