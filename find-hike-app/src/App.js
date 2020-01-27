@@ -60,18 +60,6 @@ componentDidMount(){
 
 }
 
-
-// getHikeResults = () => {
-//   const hikerProjectUrl = `${this.state.hikerProjectAPI}${this.state.lat}&lon=${this.state.long}&key=${this.state.hikerProjectKey}`
-
-//   fetch(hikerProjectUrl)
-//   .then(response => response.json())
-//   .then(response => {
-//     this.setState({ hikeResults: response.trails});
-//     console.log(this.state.hikeResults);
-//   })
-// }
-
 render (){
   return (
     <div>

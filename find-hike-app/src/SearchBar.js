@@ -8,12 +8,13 @@ function SearchBar(props) {
                 <input
                 type="text"
                 id="hikeLocation"
-                placeholder="enter city here"
+                placeholder="search for hikes by city here"
                 value={props.hikeLocation}
                 onChange={props.handleChange}
+                className="searchBar"
                 >   
                 </input>
-                <button type="submit">search</button>
+                {/* <button type="submit">search</button> */}
             </form>
         </div>
     )
