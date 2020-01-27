@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './SearchBar';
 import Header from './Header';
 import SearchResults from './SearchResults';
+import { results } from './placeholder-data';
 
 class App extends Component {
 constructor(){
@@ -16,46 +17,60 @@ constructor(){
     long: '',
     hikerProjectKey: process.env.REACT_APP_HIKER_PROJECT_KEY,
     hikerProjectAPI: 'https://www.hikingproject.com/data/get-trails?lat=',
-    hikeResults: ''
+    hikeResults: results
   }
 }
 
 handleChange = event => {
-  this.setState({[event.target.id]: event.target.value }); 
+  this.setState({ [event.target.id]: event.target.value });
 };
-  
+
 handleSubmit = event => {
-    event.preventDefault();
-    console.log(this.state.hikeLocation);
-    this.getCoordinates();
+  event.preventDefault();
+  console.log(this.state.hikeLocation);
+  this.getCoordinates();
+}
+
+componentDidMount(){
+  
+  this.getCoordinates = () => {
+    const mapQuestUrl = `${this.state.mapQuestAPI}${this.state.mapQuestKey}&inFormat=kvp&outFormat=json&location=${this.state.hikeLocation}&thumbMaps=false`;
+  
+  
+    fetch(mapQuestUrl)
+    .then(response => response.json())
+    .then(response => {
+      let lat = (response.results[0].locations[0].latLng.lat);
+      let long = (response.results[0].locations[0].latLng.lng);
+      this.setState({ lat: lat});
+      this.setState({ long: long });
+      console.log(this.state.lat);
+      console.log(this.state.long);
+      
+      const hikerProjectUrl = `${this.state.hikerProjectAPI}${this.state.lat}&lon=${this.state.long}&key=${this.state.hikerProjectKey}`
+  
+      return fetch(hikerProjectUrl)
+    })
+    .then(response => response.json())
+      .then(response => {
+        this.setState({ hikeResults: response });
+        console.log(this.state.hikeResults);
+      })
   }
 
-getCoordinates = () => {
-  const mapQuestUrl = `${this.state.mapQuestAPI}${this.state.mapQuestKey}&inFormat=kvp&outFormat=json&location=${this.state.hikeLocation}&thumbMaps=false`;
-
-  fetch(mapQuestUrl)
-  .then(response => response.json())
-  .then(response => {
-    let lat = (response.results[0].locations[0].latLng.lat);
-    let long = (response.results[0].locations[0].latLng.lng);
-    this.setState({ lat: lat});
-    this.setState({ long: long });
-    console.log(this.state.lat);
-    console.log(this.state.long);
-    this.getHikeResults();
-  })
 }
 
-getHikeResults = () => {
-  const hikerProjectUrl = `${this.state.hikerProjectAPI}${this.state.lat}&lon=${this.state.long}&key=${this.state.hikerProjectKey}`
 
-  fetch(hikerProjectUrl)
-  .then(response => response.json())
-  .then(response => {
-    this.setState({ hikeResults: response.trails});
-    console.log(this.state.hikeResults);
-  })
-}
+// getHikeResults = () => {
+//   const hikerProjectUrl = `${this.state.hikerProjectAPI}${this.state.lat}&lon=${this.state.long}&key=${this.state.hikerProjectKey}`
+
+//   fetch(hikerProjectUrl)
+//   .then(response => response.json())
+//   .then(response => {
+//     this.setState({ hikeResults: response.trails});
+//     console.log(this.state.hikeResults);
+//   })
+// }
 
 render (){
   return (
