@@ -5,6 +5,7 @@ import Header from './Header';
 import SearchResults from './SearchResults';
 import Footer from './Footer';
 import { results } from './placeholder-data';
+import { Link, Switch, Route,  } from "react-router-dom";
 
 class App extends Component {
 constructor(){
