@@ -18,6 +18,10 @@ html {
     font-size: 10px;
 }
 
+a{
+    text-decoration: none;
+} 
+
 h1, h3 {
     font-family: "Noto Serif", serif;
     font-weight: bold;
@@ -142,7 +146,9 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 6rem 0;
+    align-items: center;
+    margin: 6rem auto;
+    max-width: 1820px;
 }
 
 .results-content-container {
@@ -173,4 +179,42 @@ form {
 .content-card p {
     font-size: 1.5rem;
     margin: .3rem;
+}
+
+.footer {
+    background: var(--chineesered);
+    padding:2rem;
+    color: var(--platinum);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.hiker-pjt-logo{
+    height: 50px;
+    padding: 0 1.5em;
+}
+
+.mapquest-logo {
+    height: 35px;
+    padding: 0 1em;
+}
+
+h6 {
+    font-size: 2rem;
+    font-family: "Noto Serif", serif;
+}
+
+@media screen and (max-width:560px){
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h6 {
+        flex-basis: 100%;
+        text-align: center;
+        padding: .2em 0 1em 0;
+    }
 }

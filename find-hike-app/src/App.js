@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './SearchBar';
 import Header from './Header';
 import SearchResults from './SearchResults';
+import Footer from './Footer';
 import { results } from './placeholder-data';
 
 class App extends Component {
@@ -72,6 +73,7 @@ render (){
       <SearchResults
       results={this.state.hikeResults} 
       />
+      <Footer />
     </div>
   )
 }
