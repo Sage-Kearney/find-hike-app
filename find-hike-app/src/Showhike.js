@@ -1,10 +1,13 @@
 import React from 'react'
 
+
+
+
 export default function Showhike(props) {
     console.log(props)
     return (
         <div>
-            
+            Showhike page
         </div>
     )
 }

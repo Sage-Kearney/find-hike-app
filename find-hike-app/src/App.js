@@ -4,8 +4,9 @@ import SearchBar from './SearchBar';
 import Header from './Header';
 import SearchResults from './SearchResults';
 import Footer from './Footer';
+import Showhike from './Showhike';
 import { results } from './placeholder-data';
-import { Link, Switch, Route,  } from "react-router-dom";
+import { Link, Switch, Route  } from "react-router-dom";
 
 class App extends Component {
 constructor(){
@@ -19,8 +20,14 @@ constructor(){
     long: '',
     hikerProjectKey: process.env.REACT_APP_HIKER_PROJECT_KEY,
     hikerProjectAPI: 'https://www.hikingproject.com/data/get-trails?lat=',
-    hikeResults: results
+    hikeResults: results,
+    selectedHike: ''
   }
+}
+
+setHike = hike => {
+  this.setState({selectedHike: hike})
+  console.log(this.state.selectedHike);
 }
 
 handleChange = event => {
@@ -29,7 +36,7 @@ handleChange = event => {
 
 handleSubmit = event => {
   event.preventDefault();
-  console.log(this.state.hikeLocation);
+  // console.log(this.state.hikeLocation);
   this.getCoordinates();
 }
 
@@ -46,8 +53,8 @@ componentDidMount(){
       let long = (response.results[0].locations[0].latLng.lng);
       this.setState({ lat: lat});
       this.setState({ long: long });
-      console.log(this.state.lat);
-      console.log(this.state.long);
+      // console.log(this.state.lat);
+      // console.log(this.state.long);
       
       const hikerProjectUrl = `${this.state.hikerProjectAPI}${this.state.lat}&lon=${this.state.long}&key=${this.state.hikerProjectKey}`
   
@@ -56,7 +63,7 @@ componentDidMount(){
     .then(response => response.json())
       .then(response => {
         this.setState({ hikeResults: response });
-        console.log(this.state.hikeResults);
+        // console.log(this.state.hikeResults);
       })
   }
 
@@ -65,19 +72,35 @@ componentDidMount(){
 render (){
   return (
     <div>
-      <Header />
+      <Link to="/">
+        <Header />
+      </Link>
       <SearchBar
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         hikeLocation={this.state.hikeLocation}
       />
-      <SearchResults
-      results={this.state.hikeResults} 
-      />
+      <SearchResults results={this.state.hikeResults} setHike={this.setHike} />
       <Footer />
+      <Switch>
+        <Route exact path="/" component={Header}/>
+        <Route
+          exact
+          path="/:name"
+          render={routerProps => {
+            console.log(routerProps);
+            return (
+              <Showhike
+                hike={this.state.selectedHike}
+                // routerHike={routerProps.match.params.name}
+              />
+            );
+          }}
+        />
+      </Switch>
     </div>
-  )
-}
+  );
+} 
 
 }
 
