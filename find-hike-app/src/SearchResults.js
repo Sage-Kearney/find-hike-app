@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 export default function SearchResults(props) {
@@ -10,24 +10,18 @@ export default function SearchResults(props) {
             ? props.results.trails.map(hike => {
                 return (
                   <div key={hike.name} className="results-content-container">
-                    <Link
-                      onClick={() => props.setHike(hike)}
-                      to={'/' + hike.name}
-                    >
-                      <div
-                        className="image-card"
-                        style={{
-                          backgroundImage: `url(${hike.imgMedium})`,
-                          backgroundRepeat: 'no-repeat',
-                          backgroundSize: 'cover'
-                        }}
-                      ></div>
+                    <a href={hike.url}>
+                      {hike.imgMedium ? 
+                      <div className="image-card" style={{ backgroundImage: `url(${hike.imgMedium})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}> 
+                      </div> :
+                      <div className="image-card" style={{ backgroundImage: 'url(/placeholder.jpg)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+                      </div> }
                       <div className="content-card">
                         <h3>{hike.name}</h3>
                         <h5>{hike.location}</h5>
                         <p>Length: {hike.length} miles</p>
                       </div>
-                    </Link>
+                    </a>
                   </div>
                 );
               })
@@ -106,12 +100,21 @@ export default function SearchResults(props) {
     export default SearchResults; */}
 
 
-{/* <a href={hike.url}>
-    <div className="image-card" style={{ backgroundImage: `url(${hike.imgMedium})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
-    </div>
-    <div className="content-card">
-        <h3>{hike.name}</h3>
-        <h5>{hike.location}</h5>
-        <p>Length: {hike.length} miles</p>
-    </div>
-</a> */}
+{/* <Link
+  onClick={() => props.setHike(hike)}
+  to={'/' + hike.name}
+>
+  <div
+    className="image-card"
+    style={{
+      backgroundImage: `url(${hike.imgMedium})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    }}
+  ></div>
+  <div className="content-card">
+    <h3>{hike.name}</h3>
+    <h5>{hike.location}</h5>
+    <p>Length: {hike.length} miles</p>
+  </div>
+</Link> */}

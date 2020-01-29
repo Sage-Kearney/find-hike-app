@@ -72,9 +72,7 @@ componentDidMount(){
 render (){
   return (
     <div>
-      <Link to="/">
-        <Header />
-      </Link>
+      <Header />
       <SearchBar
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
@@ -83,8 +81,7 @@ render (){
       <SearchResults results={this.state.hikeResults} setHike={this.setHike} />
       <Footer />
       <Switch>
-        <Route exact path="/" component={Header}/>
-        <Route
+        {/* <Route
           exact
           path="/:name"
           render={routerProps => {
@@ -96,7 +93,7 @@ render (){
               />
             );
           }}
-        />
+        /> */}
       </Switch>
     </div>
   );
