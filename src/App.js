@@ -4,9 +4,9 @@ import SearchBar from './SearchBar';
 import Header from './Header';
 import SearchResults from './SearchResults';
 import Footer from './Footer';
-// import Showhike from './Showhike';
+import Showhike from './Showhike';
 import { results } from './placeholder-data';
-// import { Link, Switch, Route  } from "react-router-dom";
+import { Link, Switch, Route  } from "react-router-dom";
 
 class App extends Component {
 constructor(){
@@ -28,6 +28,10 @@ constructor(){
 setHike = hike => {
   this.setState({selectedHike: hike})
   console.log(this.state.selectedHike);
+}
+
+resetPage = () => {
+  this.setState({hikeResults: results});
 }
 
 handleChange = event => {
@@ -71,17 +75,45 @@ componentDidMount(){
 
 render (){
   return (
-    <div>
+    <>
       <Header />
       <SearchBar
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         hikeLocation={this.state.hikeLocation}
       />
-      <SearchResults results={this.state.hikeResults} setHike={this.setHike} />
+      <Switch>
+      <Route path="/" exact component={() => 
+        <SearchResults results={this.state.hikeResults} setHike={this.setHike} />}/>
+        <Route path="/hike/:hike" 
+        render={routerProps => {
+          console.log(routerProps);
+          return (
+            <Showhike
+              hike={this.state.selectedHike}
+              resetPage={this.resetPage}
+            
+            />
+          );
+        }} />
+      </Switch>
       <Footer />
-      {/* <Switch> */}
-        {/* <Route
+    </>
+  );
+} 
+
+}
+
+export default App;
+
+
+
+
+
+
+
+{/* <Switch> */ }
+{/* <Route
           exact
           path="/:name"
           render={routerProps => {
@@ -94,16 +126,7 @@ render (){
             );
           }}
         /> */}
-      {/* </Switch> */}
-    </div>
-  );
-} 
-
-}
-
-export default App;
-
-
+{/* </Switch> */ }
 
 
 /*

@@ -48,8 +48,9 @@ h3:hover {
     color: #d66045;
 }
 
-.header {
+header {
     background-image: url('/scenic-photo-of-grand-canyon-during-daytime-2757641.jpg');
+    background-color: var(--chineesered);
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
