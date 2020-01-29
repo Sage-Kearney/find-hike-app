@@ -218,3 +218,41 @@ h6 {
         padding: .2em 0 1em 0;
     }
 }
+
+.footer p {
+    color: var(--platinum);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3rem;
+    flex-basis: 63%;
+}
+
+@media screen and (max-width:1420px){
+    .footer p {
+        flex-basis: 55%;
+    }
+}
+
+@media screen and (max-width:1180px){
+    .footer p {
+        flex-basis: 45%;
+    }
+}
+
+@media screen and (max-width:972px){
+    .footer p {
+        flex-basis: 35%;
+    }
+}
+
+@media screen and (max-width:830px){
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer p {
+        flex-basis: 100%;
+        text-align: center;
+        padding-bottom: 2em;
+    }
+}
