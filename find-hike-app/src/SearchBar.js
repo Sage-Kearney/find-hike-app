@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { SearchIcon} from './shared/AppIcons';
 
 function SearchBar(props) {
     return (
         <div>
             <form
-            onSubmit={props.handleSubmit}>
+            onSubmit={props.handleSubmit}
+            >
                 <input
                 type="text"
                 id="hikeLocation"
@@ -14,7 +16,6 @@ function SearchBar(props) {
                 className="searchBar"
                 >   
                 </input>
-                {/* <button type="submit">search</button> */}
             </form>
         </div>
     )
