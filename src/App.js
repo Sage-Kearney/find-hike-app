@@ -4,9 +4,9 @@ import SearchBar from './SearchBar';
 import Header from './Header';
 import SearchResults from './SearchResults';
 import Footer from './Footer';
-import Showhike from './Showhike';
+// import Showhike from './Showhike';
 import { results } from './placeholder-data';
-import { Link, Switch, Route  } from "react-router-dom";
+// import { Link, Switch, Route  } from "react-router-dom";
 
 class App extends Component {
 constructor(){
@@ -80,7 +80,7 @@ render (){
       />
       <SearchResults results={this.state.hikeResults} setHike={this.setHike} />
       <Footer />
-      <Switch>
+      {/* <Switch> */}
         {/* <Route
           exact
           path="/:name"
@@ -94,7 +94,7 @@ render (){
             );
           }}
         /> */}
-      </Switch>
+      {/* </Switch> */}
     </div>
   );
 } 
