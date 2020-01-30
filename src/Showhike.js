@@ -11,7 +11,6 @@ export default function Showhike(props) {
             <p className="back-home-btn"><Link to="/" onClick={props.restPage} >Back to search</Link></p>
             {props.hike.imgMedium ? <img src={props.hike.imgMedium} alt={props.hike.name}></img> :
                 <img src="/placeholder.jpg" alt={props.hike.name} className="default-image"></img>}
-            {/* <img src={props.hike.imgMedium} alt={props.hike.name}></img> */}
             <div className="hike-content">
                 <h2 className="showpageH1">{props.hike.name}</h2>
                 <p>{props.hike.summary}</p>

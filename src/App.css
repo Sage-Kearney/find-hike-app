@@ -144,7 +144,6 @@ form {
 
 
 .results-container {
-    /* border: 1px solid green; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -154,8 +153,6 @@ form {
 }
 
 .results-content-container {
-    /* border: 3px solid purple; */
-    /* overflow: hidden; */
     height: 450px;
     width: 45rem;
     margin: 1rem;
@@ -163,13 +160,11 @@ form {
 }
 
 .image-card {
-    /* border: 2px solid red; */
     width: 100%;
     height: 76%;
 }
 
 .content-card {
-    /* border: 1px solid blue; */
     padding: 1.3em 1.5em;
 }
 
@@ -269,7 +264,6 @@ h6 {
 
 .back-home-btn {
     flex-basis: 100%;
-    /* border: 2px solid orange; */
     padding-left: 14.5%;
     padding-bottom: .7em;
     font-size: 1.5rem;
@@ -286,7 +280,6 @@ h6 {
 .show-hike-container img {
     flex-basis: 40%;
     margin-right: 2em;
-    /* border: 1px solid black; */
     background-size: cover;
 }
 
@@ -322,6 +315,12 @@ hr {
     display: flex;
 } 
 
+@media screen and (max-width:1110px){
+    .details-container {
+        flex-direction: column;
+    } 
+}
+
 .details-container div {
     flex: 1;
 }
@@ -330,8 +329,6 @@ hr {
     text-decoration: none;
     font-size: 1.5rem;
     font-family: "Noto Serif";
-    /* width: 100%; */
-    /* border: 1px solid black; */
 }
 
 .hike-content button {
@@ -348,4 +345,14 @@ button a {
 
 .default-image {
     width: 30%;
+}
+
+@media screen and (max-width:852px){
+    img{
+        width: 300px;
+    }
+
+    .hike-content {
+        width: 3px;
+    }
 }

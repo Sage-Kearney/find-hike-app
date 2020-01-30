@@ -1,5 +1,4 @@
 import React from 'react';
-// import { SearchIcon} from './shared/AppIcons';
 
 function SearchBar(props) {
     return (

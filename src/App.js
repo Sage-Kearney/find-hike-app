@@ -6,7 +6,7 @@ import SearchResults from './SearchResults';
 import Footer from './Footer';
 import Showhike from './Showhike';
 import { results } from './placeholder-data';
-import { Link, Switch, Route  } from "react-router-dom";
+import { Switch, Route  } from "react-router-dom";
 
 class App extends Component {
 constructor(){
@@ -40,7 +40,6 @@ handleChange = event => {
 
 handleSubmit = event => {
   event.preventDefault();
-  // console.log(this.state.hikeLocation);
   this.getCoordinates();
 }
 
@@ -57,8 +56,6 @@ componentDidMount(){
       let long = (response.results[0].locations[0].latLng.lng);
       this.setState({ lat: lat});
       this.setState({ long: long });
-      // console.log(this.state.lat);
-      // console.log(this.state.long);
       
       const hikerProjectUrl = `${this.state.hikerProjectAPI}${this.state.lat}&lon=${this.state.long}&key=${this.state.hikerProjectKey}`
   
@@ -67,7 +64,6 @@ componentDidMount(){
     .then(response => response.json())
       .then(response => {
         this.setState({ hikeResults: response });
-        // console.log(this.state.hikeResults);
       })
   }
 
@@ -107,46 +103,3 @@ render (){
 export default App;
 
 
-
-
-
-
-
-{/* <Switch> */ }
-{/* <Route
-          exact
-          path="/:name"
-          render={routerProps => {
-            console.log(routerProps);
-            return (
-              <Showhike
-                hike={this.state.selectedHike}
-                // routerHike={routerProps.match.params.name}
-              />
-            );
-          }}
-        /> */}
-{/* </Switch> */ }
-
-
-/*
-user types in location and hits enter/search
-
-mapquest api takes input from searchbar and converts it to lat & long
-
-that data get's stored in two variables
-
-those variables are refrenced in a dynamic url that fetches the hiker project api
-
-Images, Hike name, and difficulty render in the browser, mulitple pages, max 12 per page
-
-User browses through images & click which hike they want to explore more
-
-User is lead to url attached to that specific hike's data in the api
-
-*/ 
-
-
-
-
-// https://www.mapquestapi.com/geocoding/v1/address?key=KEY&inFormat=kvp&outFormat=json&location=Marietta%2C+TN&thumbMaps=false
