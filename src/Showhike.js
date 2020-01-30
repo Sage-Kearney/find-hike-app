@@ -27,7 +27,7 @@ export default function Showhike(props) {
                         <h4><span className="attribute">Total descent:</span> {props.hike.descent}</h4>
                     </div>
                 </div>
-                <button><a href={props.hike.url} className="">More Information</a></button>
+                <button><a href={props.hike.url} className="" target="_blank" rel="noopener noreferrer">More Information</a></button>
             </div>
         </div>
     )
