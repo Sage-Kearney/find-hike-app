@@ -41,7 +41,7 @@ Connect with me on LinkedIn https://www.linkedin.com/in/sage-kearney/
 ## Special thanks to..
 -Jerrica Bobadilla, for helping me with my map function & deploying to Heroku & encouraging me throughout the project
 -Qusai Fares, for helping me get my links/routes working
--Rixio Barrios, for giving me feedback & encouragment 
+-Rixio Barrios, for giving me feedback & encouragment, & telling me about changing my project title 
 -Daphne Mintz & Daisy Yau for trying to help me figure out what was wrong with my Heroku
 
 <hr></hr>
