@@ -346,4 +346,6 @@ button a {
     color: rgba(65, 65, 65, .6);
 }
 
-
+.default-image {
+    width: 30%;
+}
