@@ -21,11 +21,11 @@ Inspired by REI and other outdoor companies, and taking my users into considerat
 To get my app to work, I needed to use two API's. In order to retrieve the right information from the Hiker Project API (aka the hikes based on a certain location), I needed to find the longitude & lattitude for the location input by the user. So to do that, I used the Mapquest API to grab the user input, translate the location into lat & long, and then infuse that data into my fetch call to the Hiker Project API. Having all of the right information in the right places is what enabled me to render the data on the page, providing a seamless user experience. 
 
 ### Technologies Used
--React
--JSX-CSS
--Hiking Project API https://www.hikingproject.com/
--Mapquest API https://www.mapquest.com/
--Heroku
+- React
+-  JSX-CSS
+- Hiking Project API https://www.hikingproject.com/
+- Mapquest API https://www.mapquest.com/
+- Heroku
 
 ### Getting Started/Installation Instructions
 Please follow the link to use Find-Hike App https://find-hike.herokuapp.com/
@@ -38,10 +38,10 @@ Visit my portfolio site here https://sage-kearney.github.io/
 Connect with me on LinkedIn https://www.linkedin.com/in/sage-kearney/
 
 ## Special thanks to..
--Jerrica Bobadilla, for helping me with my map function & deploying to Heroku & encouraging me throughout the project
--Qusai Fares, for helping me get my links/routes working
--Rixio Barrios, for giving me feedback & encouragment, & telling me about changing my project title 
--Daphne Mintz & Daisy Yau for trying to help me figure out what was wrong with my Heroku
+- Jerrica Bobadilla, for helping me with my map function & deploying to Heroku & encouraging me throughout the project
+- Qusai Fares, for helping me get my links/routes working
+- Rixio Barrios, for giving me feedback & encouragment, & telling me about changing my project title 
+- Daphne Mintz & Daisy Yau for trying to help me figure out what was wrong with my Heroku
 
 
 ## REACT
