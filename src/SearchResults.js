@@ -4,17 +4,18 @@ import { Link } from 'react-router-dom';
 
 export default function SearchResults(props) {
     return (
+          
       <div>
         <div className="results-container">
           {props.results.trails
-            ? (props.results.trails.map(hike => {
+            ? props.results.trails.map(hike => {
                 return (
                   <Link 
-                  to={`/hike/${hike.name}`} 
+                  to={`/${hike.location}/${hike.name}`} 
                   onClick={()=>props.setHike(hike)}
                   key={hike.name} 
                   className="results-content-container">
-                    {/* <a href={hike.url}> */}
+                    
                       {hike.imgMedium ? 
                       <div className="image-card" style={{ backgroundImage: `url(${hike.imgMedium})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}> 
                       </div> :
@@ -25,10 +26,10 @@ export default function SearchResults(props) {
                         <h5>{hike.location}</h5>
                         <p>Length: {hike.length} miles</p>
                       </div>
-                    {/* </a> */}
+                    
                   </Link>
                 );
-              }))
+              })
             : props.results.map(hike => {
                 return (
                   <div key={hike.name} className="results-content-container">

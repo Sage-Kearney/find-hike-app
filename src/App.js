@@ -85,7 +85,7 @@ render (){
       <Switch>
       <Route path="/" exact component={() => 
         <SearchResults results={this.state.hikeResults} setHike={this.setHike} />}/>
-        <Route path="/hike/:hike" 
+        <Route path="/:location/:hike" 
         render={routerProps => {
           console.log(routerProps);
           return (
