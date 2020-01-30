@@ -6,6 +6,8 @@
 Built upon the belief that a life well lived is a life outside, Find-Hike App is designed for the outdoor enthusiast who wants to get out and hike somewhere, but isn’t too sure what is around the area. To help get you outside as quickly as possible, Find-Hike enables you to input your location, browse hikes in your area, and choose your hike in less than ten minutes. All the information you need is at your fingertips, you'll be out amongts the trees in no time!  
 
 ## BTS: Process of building the Find-Hike App
+![prj-2-](https://media.git.generalassemb.ly/user/20934/files/0fd3ab00-4356-11ea-9b12-7c46c7556bc7)
+
 ### Wireframe
 Home/Search display:
 ![wireframe-search](https://media.git.generalassemb.ly/user/20934/files/a8662d00-434e-11ea-96e8-2677135e6cdb)
