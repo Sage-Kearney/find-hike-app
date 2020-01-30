@@ -9,12 +9,12 @@ Built upon the belief that a life well lived is a life outside, Find-Hike App is
 ### Wireframe
 Home/Search display:
 ![wireframe-search](https://media.git.generalassemb.ly/user/20934/files/a8662d00-434e-11ea-96e8-2677135e6cdb)
-
 Selected hike display:
 ![wireframe-show](https://media.git.generalassemb.ly/user/20934/files/aac88700-434e-11ea-88fc-6ea4dc1a9972)
 
 ### App Aesthetics
-Inspired by REI and other outdoor companies, and taking my users into consideration, I chose to fill this app with warm earthy tones usually found in canyons tucked away in the southwest or mid west regions. The header font is casual, yet grabs your attention, while also providing a friendly, approachable feel. The body font is slim, minimal, and easy to read- similar to the overal design of the app. 
+Inspired by REI and other outdoor companies, and taking my users into consideration, I chose to fill this app with warm earthy tones usually found in canyons tucked away in the southwest or mid west regions. The header font is casual, yet grabs your attention, while also providing a friendly, approachable feel. The body font is slim, minimal, and easy to read- similar to the overal design of the app.
+
 ![app-aesthetic](https://media.git.generalassemb.ly/user/20934/files/b4eb8500-4350-11ea-9a05-a8f464e98d94)
 
 ### How it works-using API's 
@@ -22,8 +22,7 @@ To get my app to work, I needed to use two API's. In order to retrieve the right
 
 ### Technologies Used
 -React
--JSX
--CSS
+-JSX-CSS
 -Hiking Project API https://www.hikingproject.com/
 -Mapquest API https://www.mapquest.com/
 -Heroku
@@ -44,7 +43,6 @@ Connect with me on LinkedIn https://www.linkedin.com/in/sage-kearney/
 -Rixio Barrios, for giving me feedback & encouragment, & telling me about changing my project title 
 -Daphne Mintz & Daisy Yau for trying to help me figure out what was wrong with my Heroku
 
-<hr></hr>
 
 ## REACT
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
