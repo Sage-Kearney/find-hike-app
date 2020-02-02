@@ -27,7 +27,6 @@ constructor(){
 
 setHike = hike => {
   this.setState({selectedHike: hike})
-  console.log(this.state.selectedHike);
 }
 
 resetPage = () => {
