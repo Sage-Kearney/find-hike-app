@@ -171,9 +171,7 @@ form {
         margin: 1rem 3rem;
         width: 100%;
     }
-
 }
-
 
 .image-card {
     width: 100%;
@@ -297,8 +295,28 @@ h6 {
     flex-basis: 40%;
     margin-right: 2em;
     background-size: cover;
+    max-width: 550px;
 }
 
+@media screen and (max-width: 930px){
+    .back-home-btn {
+        padding-left: 0px;
+    }
+
+    .show-hike-container {
+        flex-direction: column;
+        padding: 7em 5em;
+    }
+
+    .show-hike-container img {
+        width: 100%;
+    }
+
+    .hike-content {
+        width: 100%;
+        padding-top:5em;
+    }
+}
 
 .hike-content h2 {
     font-size: 4rem;
@@ -363,8 +381,9 @@ button a {
     width: 30%;
 }
 
-@media screen and (max-width:852px){
-    .hike-content {
-        width: 3px;
-    }
+@media screen and (max-width:350px){
+   html {
+    font-size: 8px;
+}
+
 }
